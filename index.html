@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #D2FBB0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #111;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #595C57;
+}
+
+/* Main content */
+.main {
+  margin-left: 250px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: #9AD76F;
+  color: #111;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #DAECCE;
+  padding-left: 8px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="essen_main.html"><img src="icon-home.png" height="30px" width="30px">Startseite</a>
+  <button class="dropdown-btn"><img src="icon-pizza.png" height="30px" width="30px">Pizzeria 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a onclick="p_1()">Pizzeria Bell Armore</a>
+    <a onclick="p_2()">Pizzeria Mehdi</a>
+    <a onclick="p_3()">Pizzeria Sardegna La Rosa Blu</a>
+  </div>
+  <button class="dropdown-btn"><img src="icon-kebap.png" height="30px" width="30px">Kebap 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a onclick="k_1()">BAS Kebap</a>
+    <a onclick="k_2()">Benji's Star Kebap</a>
+    <a onclick="k_3()">Charly's Kebap</a>
+  </div>
+  <button class="dropdown-btn"><img src="icon-burger.png" height="30px" width="30px">Burger
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a onclick="b_1()">Baba's Diner</a>
+    <a onclick="b_2()">Burger King</a>
+    <a onclick="b_3()">McDonald's</a>
+  </div>
+  <button class="dropdown-btn"><img src="icon-nudel.png" height="30px" width="30px">Asiatisch
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a onclick="a_1()">ZHAO-Fu ASIA Imbiss</a>
+    <a onclick="a_2()">Q Mee</a>
+    
+  </div>
+  
+  <button class="dropdown-btn"><img src="icon-kaffee.png" height="30px" width="30px">Kaffee & Tee
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a onclick="c_1()">2Beans Kaffee</a>
+    <a onclick="c_2()">Eiskaffee Verdi</a>
+  </div>
+  <a onclick="lhk()"><img src="icon-flag.png" height="30px" width="30px">Landhausküche</a>
+  
+</div>
+
+<div class="main">
+  <h2 id="ü1">Startseite</h2>
+  <p id="t1">Auf dieser Website gibt es Informationen über Restaurants in Eisenstadt.</p>
+  <p id="t4"></p>
+  <p id="t2"></p>
+  <p id="t3"></p>
+</div>
+
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+function p_1(){
+  document.getElementById('ü1').innerHTML = "Pizzeria Pizzeria Bell Amore";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://www.pizzeriabellamore-eisenstadt.at/\" target=\"_blank\">Pizzeria Bell Amore</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Beim Alten Stadttor 6"
+  document.getElementById('t3').innerHTML = "<img src=\"pizza-bell.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 02682/64333"
+}
+
+function p_2(){
+  document.getElementById('ü1').innerHTML = "Pizzeria Mehdi";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> keine Karte vorhanden"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Johann-Permayer-Straße 3"
+  document.getElementById('t3').innerHTML = "<img src=\"pizza-mehdi.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 02682/66221"
+}
+
+function p_3(){
+  document.getElementById('ü1').innerHTML = "Pizzeria Sardegna La Rosa Blu";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://larosablu.at/index.php?CID=3&bereich=Speisekarte&kat=Speisekarte\" target=\"_blank\">Pizzeria Sardegna La Rosa Blu</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Feldstraße 35"
+  document.getElementById('t3').innerHTML = "<img src=\"pizza-sardegna.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 0676/6820192"
+}
+
+function k_1(){
+  document.getElementById('ü1').innerHTML = "BAS Kebap";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b><br><img src=\"kebap-BAS-sk.jpg\" height=\"300px\" width=\"500px\">"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Neusiedler Straße 41"
+  document.getElementById('t3').innerHTML = "<img src=\"kebap-BAS.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 0681/20669206"
+}
+
+function k_2(){
+  document.getElementById('ü1').innerHTML = "Benji's Star Kebap";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://www.benjis.at/bestellen\" target=\"_blank\">Benji's Star Kebap</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Pfarrgasse 35"
+  document.getElementById('t3').innerHTML = "<img src=\"kebap-benji.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 0664/9997397"
+}
+
+function k_3(){
+  document.getElementById('ü1').innerHTML = "Charly's Kebap";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"http://charlyskebappizza.at/media/Speisekarte/Speisekarte.png\" target=\"_blank\">Charly's Kebap</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Pfarrgasse 29"
+  document.getElementById('t3').innerHTML = "<img src=\"kebap-charly.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 0664/5869606"
+}
+
+function b_1(){
+  document.getElementById('ü1').innerHTML = "Baba's Diner";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://www.babasdiner.at/Baba's%20Diner%20Speisekarte.pdf\" target=\"_blank\">Baba's Diner</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Neusiedler Straße 32"
+  document.getElementById('t3').innerHTML = "<img src=\"burger-baba.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 0660/3746734"
+}
+
+function b_2(){
+  document.getElementById('ü1').innerHTML = "Burger King";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://www.burgerking.at/menu\" target=\"_blank\">Burger King</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Neusiedler Straße 50"
+  document.getElementById('t3').innerHTML = "<img src=\"burger-king.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 02682/61700"
+}
+
+function b_3(){
+  document.getElementById('ü1').innerHTML = "McDonal's";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://www.mcdonalds.at/produkte/produktuebersicht/unsere-produkte\" target=\"_blank\">McDonald's</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Rusterstraße 147"
+  document.getElementById('t3').innerHTML = "<img src=\"burger-mc.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 02682/75001"
+}
+
+function a_1(){
+  document.getElementById('ü1').innerHTML = "ZHAO-Fu ASIA Imbiss";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://i.ibb.co/sHVH38s/Dok1-konvertiert.jpg\" target=\"_blank\">Zhao-Fu Asia Imbiss</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Bürgerspitalgasse 2"
+  document.getElementById('t3').innerHTML = "<img src=\"asia-zhao.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 0677/61215118"
+}
+
+function a_2(){
+  document.getElementById('ü1').innerHTML = "Q Mee";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://qmee.at/speisekarten/\" target=\"_blank\">Q Mee</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> St. Rochustraße 17"
+  document.getElementById('t3').innerHTML = "<img src=\"asia-qmee.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 02682/20667"
+}
+
+function c_1(){
+  document.getElementById('ü1').innerHTML = "2Beans Kaffee";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://2beans.coffee/i/speisekarte/\" target=\"_blank\">2Beans Kaffe</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b> Kleinhöfleiner Hauptstraße 8"
+  document.getElementById('t3').innerHTML = "<img src=\"kaffee-2beans.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 0650/3117703"
+}
+
+function c_2(){
+  document.getElementById('ü1').innerHTML = "Eiscafe Verdi";
+  document.getElementById('t1').innerHTML = "<b>Speisekarte:</b> <a href=\"https://eiscafe-verdi.eatbu.com/?lang=de#menu/\" target=\"_blank\">Eiscafe Verdi</a>"
+  document.getElementById('t2').innerHTML = "<b>Adresse:</b>Hauptstraße 19"
+  document.getElementById('t3').innerHTML = "<img src=\"kaffee-verdi.png\">"
+  document.getElementById('t4').innerHTML = "<b>Telefonnummer:</b> 02682 20724"
+}
+
+function lhk(){
+  document.getElementById('ü1').innerHTML = "<img src=\"speiseplan.png\">";
+  document.getElementById('t1').innerHTML = ""
+  document.getElementById('t2').innerHTML = ""
+  document.getElementById('t3').innerHTML = ""
+  document.getElementById('t4').innerHTML = ""
+}
+
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+</html> 
